@@ -31,7 +31,7 @@ function StockTracker() {
   });
 
   return (
-    <div className="row">
+    <div className="row normal">
       <div className="col">
         <span className="miniheader">Stock Tracker</span><br />
         <div className="port-text">

@@ -33,7 +33,7 @@ function NumberGuessing() {
   });
 
   return (
-    <div className="row">
+    <div className="row normal">
       <div className="col">
         <span className="miniheader">Number Guessing Game</span><br />
         <div className="port-text">

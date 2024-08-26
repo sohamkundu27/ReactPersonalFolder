@@ -34,7 +34,7 @@ function Jetbot() {
   });
 
   return (
-    <div className="row">
+    <div className="row normal">
       <div className="col">
         <span className="miniheader">JetBot</span><br />
         <div className="port-text">

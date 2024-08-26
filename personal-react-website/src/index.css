@@ -392,6 +392,10 @@ body{
     display: flex;
     flex-direction: column-reverse;
   }
+  .normal{
+    display: flex;
+    flex-direction: column;
+  }
   
 }
 
