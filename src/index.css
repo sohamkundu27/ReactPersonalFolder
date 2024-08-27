@@ -395,8 +395,12 @@ body{
   .normal{
     display: flex;
     flex-direction: column;
+  } 
+}
+@media only screen {
+  #seniorpic{
+    width: 260px;
   }
-  
 }
 
 
