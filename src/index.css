@@ -397,7 +397,7 @@ body{
     flex-direction: column;
   } 
 }
-@media only screen {
+@media only screen and (max-width: 400px) {
   #seniorpic{
     width: 160px;
   }
