@@ -85,6 +85,7 @@ body{
   align-items: center;
   position: relative;
   bottom: 30px;
+  flex-wrap: wrap;
 }
 .iconpics {
   height: 70px;
@@ -399,7 +400,24 @@ body{
 }
 @media only screen and (max-width: 400px) {
   #seniorpic{
-    width: 160px;
+    width: 260px;
+  }
+  .logos{
+    width: 75px;
+    height: 75px;
+  }
+  .logocon{
+    max-width: 85%;
+  }
+  .description{
+    font-size: 18px;
+  }
+  .sliderimages{
+    width: 250px;
+  }
+  .maincontcon{
+    display: flex;
+    flex-direction: column;
   }
 }
 
