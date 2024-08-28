@@ -398,28 +398,7 @@ body{
     flex-direction: column;
   } 
 }
-@media only screen and (max-width: 768px) {
-  #seniorpic{
-    width: 260px;
-  }
-  .logos{
-    width: 75px;
-    height: 75px;
-  }
-  .logocon{
-    max-width: 85%;
-  }
-  .description{
-    font-size: 18px;
-  }
-  .sliderimages{
-    width: 250px;
-  }
-  .maincontcon{
-    display: flex;
-    flex-direction: column;
-  }
-}
+
 
 
 
