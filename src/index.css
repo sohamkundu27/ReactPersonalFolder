@@ -11,7 +11,7 @@
   src: url(../src/assets/fonts/Raleway-Bold.ttf);
 }
 body{
-  background-image: url(/dist/assets/bgproper-DkkcksB5.png);  
+  background-image: url(/src/assets/pics/bgproper.png);  
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
