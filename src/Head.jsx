@@ -18,7 +18,7 @@ function Head() {
       <div className='seniorpiccontain'>
         <img src="../src/assets/pics/sohamsenior.jpg" id="seniorpic" alt="wdw" />
         <div className="header" id='name'>Soham Kundu</div>
-        <div className="description">Computer Engineering hi | UW-Madison</div>
+        <div className="description">Computer Engineering | UW-Madison</div>
         <div className='iconscontainer'>
           <a href="https://github.com/SoKu27" target="_blank"><button className='icon-buttons'><img id="gitid" className="iconpics" src="../src/assets/pics/githubicon.png" alt="" /><span id='githubtext'>Github</span></button></a>
           <a href="../src/assets/SohamKundu-Resume.pdf" target='_blank'><button className='icon-buttons'><img id="resid" className="iconpics" src="../src/assets/pics/resumeicon.png" alt="" /><span id='resume-text'>Resume</span></button></a>
@@ -31,4 +31,4 @@ function Head() {
   );
 }
 
-export default Head;
+export default Head; 
