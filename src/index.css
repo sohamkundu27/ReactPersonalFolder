@@ -102,6 +102,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-self: center;
+  justify-content: center;
   color: #ffffff;
   background: none;
   border: none;
@@ -414,6 +415,7 @@ body{
   }
   .sliderimages {
     width: 250px;
+    min-width: 250px;
   }
   .maincontcon {
     display: flex;
