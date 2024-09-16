@@ -26,6 +26,10 @@ function Skills() {
               <img className="logos" src="../src/assets/logos/pythonlogo.png" alt="" />
               <div className="logotext">Python</div>
             </div>
+            <div className="doublecon">
+              <img className="logos" src="../src/assets/logos/sqllogo.png" alt="" />
+              <div className="logotext">SQL</div>
+            </div>
           </div>
           <hr className="horiline"/>
           <div className="miniheader">Frameworks, Libraries, and Tools</div>

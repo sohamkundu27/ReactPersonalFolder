@@ -83,6 +83,7 @@ body{
 .iconscontainer {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   bottom: 30px;
   flex-wrap: wrap;
@@ -232,6 +233,9 @@ body{
 .portfoliomaincon{
   background-color: rgb(18, 18, 18);
 }
+.sm{
+  font-size: 19px;
+}
 .col{
   color: #ffffff;
 
@@ -321,6 +325,7 @@ body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin-top: 50px;
   padding-top: 20px;
+  right: 40px;
 }
 .copy{
   background-color: #0197f6;
@@ -340,8 +345,15 @@ body{
 .maincontcon{
   background-color: #000000;
   color: #ffffff;
-  text-align: center ;  
+  text-align: center;
 }
+.footer{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;  
+}
+
 .bottomcontcon{
   padding: 5px 0;
   display: grid;
@@ -417,9 +429,12 @@ body{
     width: 250px;
     min-width: 250px;
   }
-  .maincontcon {
+  .footer {
     display: flex;
     flex-direction: column;
+  }
+  .copyright{
+    right: 0px;
   }
 }
 

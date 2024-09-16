@@ -36,7 +36,7 @@ function StockTracker() {
         <span className="miniheader">Stock Tracker</span><br />
         <div className="port-text">
         I've created a web application powered by Python and Flask that enables users to access and analyze stock price data. By integrating the Alpha Vantage API, I've facilitated real-time stock data retrieval, encompassing time series information and handling errors for invalid ticker symbols. Furthermore, I used Matplotlib to graph stock price trends, providing users with information visually. The CSS is designed by Bootstrap, giving this application a simple, responsive UI.
-        <br /><br /> Languages and tools used- HTML CSS Bootstrap Flask Python
+        <br /><br /> Languages and tools used- HTML CSS Bootstrap Flask Python MatPlotLib Dotenv
         </div>
       </div>
       <div className="col">
@@ -65,7 +65,7 @@ function StockTracker() {
           </button>
         </div>
         <div className="portfolioview">
-        <a href="https://github.com/SoKu27/Stock-Tracker" target="_blank">
+        <a href="https://github.com/sohamkundu27/Stock-Tracker" target="_blank">
           <button className="icon-buttons portview">
             <img
               id="viewcodeid"

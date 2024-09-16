@@ -38,48 +38,8 @@ function JavascriptMP() {
   });
 
   return (
-    <div className="row swap">
-        <div className="col">
-            <div className="mainslidercontent">
-            <button 
-                className="sliderbutton prevbutt" 
-                onClick={() => handleButtonClick('prev')} 
-                disabled={isButtonDisabled}
-            >
-                &#10094;
-            </button>
-            {transitions((style, item) => (
-                <animated.img
-                className="sliderimages"
-                src={slides[item]}
-                alt=""
-                style={{ ...style }}
-                />
-            ))}
-            <button 
-                className="sliderbutton nextbutt" 
-                onClick={() => handleButtonClick('next')} 
-                disabled={isButtonDisabled}
-            >
-                &#10095;
-            </button>
-            </div>
-            <div className="portfolioview">
-            <a href="https://github.com/SoKu27/JavaScript-MiniProjects" target="_blank">
-            <button className="icon-buttons portview">
-                <img 
-                id="viewcodeid" 
-                className="iconpics" 
-                src="../src/assets/pics/viewcode.png" 
-                alt=""
-                />
-                <span>Click to view code!</span>
-            </button>
-            </a>
-        </div>
-        </div>
-            
-        <div className="col">
+    <div className="row normal">
+              <div className="col">
             <span className="miniheader">Javascript Mini Projects</span><br />
             <div className="port-text">
             <ol className='jsmol'>
@@ -124,8 +84,46 @@ function JavascriptMP() {
 
             </div>
         </div>
-    
-
+        <div className="col">
+            <div className="mainslidercontent">
+            <button 
+                className="sliderbutton prevbutt" 
+                onClick={() => handleButtonClick('prev')} 
+                disabled={isButtonDisabled}
+            >
+                &#10094;
+            </button>
+            {transitions((style, item) => (
+                <animated.img
+                className="sliderimages"
+                src={slides[item]}
+                alt=""
+                style={{ ...style }}
+                />
+            ))}
+            <button 
+                className="sliderbutton nextbutt" 
+                onClick={() => handleButtonClick('next')} 
+                disabled={isButtonDisabled}
+            >
+                &#10095;
+            </button>
+            </div>
+            <div className="portfolioview">
+            <a href="https://github.com/sohamkundu27/JavaScript-MiniProjects" target="_blank">
+            <button className="icon-buttons portview">
+                <img 
+                id="viewcodeid" 
+                className="iconpics" 
+                src="../src/assets/pics/viewcode.png" 
+                alt=""
+                />
+                <span>Click to view code!</span>
+            </button>
+            </a>
+        </div>
+        </div>
+        
     </div>
 
   );

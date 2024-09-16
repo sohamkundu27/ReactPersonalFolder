@@ -36,7 +36,14 @@ function Aspersion() {
   });
 
   return (
-    <div className="row swap">
+    <div className="row normal">
+        <div className="col">
+            <span className="miniheader">Aspersion</span><br />
+            <div className="port-text">
+            This website was created for Business Professionals of America (BPA) my senior year in high school. My team and I competed in the category of visual team design. Our team was responsible for making promotional content for a movie, so we created a movie poster, character posters, a DVD case, a trailer, a merch store, an instagram, and most importantly a website. My main responsibility was the website. The backend consists of python, where I utilized the web framework of Flask to host the website. The frontend is where I spent most of my time and I used HTML and CSS. I believe that this website played a significant part in my group's immense success in our endeavor this year at BPA. We placed 1st place at the regional tournament, 3rd place at state, and top 10 in the nation.
+            <br /><br /> Languages and tools used- HTML CSS Flask Python
+            </div>
+        </div>
         <div className="col">
             <div className="mainslidercontent">
             <button 
@@ -63,7 +70,7 @@ function Aspersion() {
             </button>
             </div>
             <div className="portfolioview">
-            <a href="https://github.com/SoKu27/Aspersion" target="_blank">
+            <a href="https://github.com/sohamkundu27/Aspersion" target="_blank">
             <button className="icon-buttons portview">
                 <img 
                 id="viewcodeid" 
@@ -77,13 +84,7 @@ function Aspersion() {
         </div>
         </div>
             
-        <div className="col">
-            <span className="miniheader">Aspersion</span><br />
-            <div className="port-text">
-            This website was created for Business Professionals of America(BPA) my senior year in high school. My team and I competed in the category of visual team design. Our team was responsible for making promotional content for a movie, so we created a movie poster, character posters, a DVD case, a trailer, a merch store, an instagram, and most importantly a website. My main responsibility was the website. The backend consists of python, where I utilized the web framework of Flask to host the website. The frontend is where I spent most of my time and I used HTML and CSS. I believe that this website played a significant part in my group's immense success in our endeavor this year at BPA. We placed 1st place at the regional tournament, 3rd place at state, and top 10 in the nation.
-            <br /><br /> Languages and tools used- HTML CSS Flask Python
-            </div>
-        </div>
+
     
 
     </div>

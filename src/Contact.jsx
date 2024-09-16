@@ -16,7 +16,7 @@ function Contact() {
         <div>
           <h4>Socials</h4>
 
-          <div className='sociallinks'><a href="https://www.linkedin.com/in/soham-kundu-a067092b3/" target='_blank'>LinkedIn</a></div>
+          <div className='sociallinks'><a href="https://www.linkedin.com/in/sohamkundu27/" target='_blank'>LinkedIn</a></div>
           <div className='sociallinks'><a href="https://www.instagram.com/sohamkundu2704/" target='_blank'>Instagram</a></div>
           <a href="#"><i className="fab fa-instagram"></i></a>
 
@@ -40,11 +40,10 @@ function Contact() {
               </button></Nav.Link>
           </Navbar>  
         </div> 
-
       </div>
       <div className='bottomcontcon'>
         <img className = "sokulogo" src="../src/assets/pics/sokulogo.png" alt="" />
-        <div className='copyright'>&copy; 2024 Soham Kundu. All rights reserved.</div>
+        <div className='copyright'>&copy; 2024 Soham Kundu. </div>
       </div>
     </div>
     )

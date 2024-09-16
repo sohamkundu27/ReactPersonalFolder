@@ -59,7 +59,7 @@ function PremierLeagueStats() {
             </button>
             </div>
             <div className="portfolioview">
-            <a href="https://github.com/SoKu27/PremierLeagueStats" target="_blank">
+            <a href="https://github.com/sohamkundu27/PremierLeagueStats" target="_blank">
             <button className="icon-buttons portview">
                 <img 
                 id="viewcodeid" 

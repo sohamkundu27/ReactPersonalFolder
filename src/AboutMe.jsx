@@ -4,12 +4,12 @@ function AboutMe() {
       <div className="about-me-con" id="about">
         <div className="header">About Me</div>
         <div className="about-text">
-        Hi! My name is Soham Kundu, and I am an 18-year-old computer engineering student at the University of Wisconsin-Madison. Growing up, I loved playing soccer and ultimate frisbee. Though I stopped competing in these sports after graduating from Eagan High School, I remain an integral part of both games by officiating them every summer. While these positions are unrelated to my field of study, I believe they hold immense value, as I regularly make impactful, game-changing decisions in high-pressure, fast-paced environments.
+        Hi! My name is Soham Kundu, and I am a computer engineering student at the University of Wisconsin-Madison. Growing up, I loved playing soccer and ultimate frisbee. Though I stopped competing in these sports after graduating from Eagan High School, I remain a part of both games by officiating them every summer. While these positions are unrelated to my field of study, I believe they hold immense value, as I regularly make impactful, game-changing decisions in high-pressure, fast-paced environments.
                 <br />
                 <br />
 
 
-        At university, I am deeply exploring the intersection of hardware and software, as I believe there is immense untapped potential in this field. I have built numerous software projects and one hardware project, all of which are showcased below. Of these projects, I definitely enjoyed the JetBot—the hardware project—the most, and I plan to do more in the near future.
+        At university, I am deeply exploring both hardware and software, as I believe there is immense untapped potential in this field. I have built numerous software projects and one hardware project, all of which are showcased below. Of these projects, I definitely enjoyed the JetBot—the hardware project—the most, and I plan to do more in the near future.
 
         <br />
 

@@ -33,15 +33,8 @@ function NumberGuessing() {
   });
 
   return (
-    <div className="row normal">
-      <div className="col">
-        <span className="miniheader">Number Guessing Game</span><br />
-        <div className="port-text">
-        This is a fun game where the player tries to guess a number that is randomly selected by the computer. The player enters guesses and receives feedback: whether their guess is too high or low. An error response is given when a guess is entered and it isn't between 1 and 100 and when no guess is entered. I coded this project with python, using the framework flask. As well as HTML and CSS.
-        <br /><br />Languages and tools used- HTML CSS Flask Python
-        
-        </div>
-      </div>
+    <div className="row swap">
+
       <div className="col">
         <div className="mainslidercontent">
           <button
@@ -68,7 +61,7 @@ function NumberGuessing() {
           </button>
         </div>
         <div className="portfolioview">
-        <a href="https://github.com/SoKu27/Aspersion" target="_blank">
+        <a href="https://github.com/sohamkundu27/Number-Guessing-Game" target="_blank">
           <button className="icon-buttons portview">
             <img
               id="viewcodeid"
@@ -81,7 +74,14 @@ function NumberGuessing() {
         </a>
       </div>
       </div>
-
+      <div className="col">
+        <span className="miniheader">Number Guessing Game</span><br />
+        <div className="port-text">
+        This is a fun game where the player tries to guess a number that is randomly selected by the computer. The player enters guesses and receives feedback: whether their guess is too high or low. An error response is given when a guess is entered and it isn't between 1 and 100 and when no guess is entered. I coded this project with python, using the framework flask. As well as HTML and CSS.
+        <br /><br />Languages and tools used- HTML CSS Flask Python
+        
+        </div>
+      </div>
     </div>
   );
 }
