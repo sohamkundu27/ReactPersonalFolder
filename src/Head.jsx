@@ -20,8 +20,8 @@ function Head() {
         <div className="header" id='name'>Soham Kundu</div>
         <div className="description">Computer Engineering | UW-Madison</div>
         <div className='iconscontainer'>
-          <a href="https://github.com/SoKu27" target="_blank"><button className='icon-buttons'><img id="gitid" className="iconpics" src="../src/assets/pics/githubicon.png" alt="" /><span id='githubtext'>Github</span></button></a>
-          <a href="../src/assets/Resume-SohamKundu.pdf" target='_blank'><button className='icon-buttons'><img id="resid" className="iconpics" src="../src/assets/pics/resumeicon.png" alt="" /><span id='resume-text'>Resume</span></button></a>
+          <a href="https://github.com/sohamkundu27" target="_blank"><button className='icon-buttons'><img id="gitid" className="iconpics" src="../src/assets/pics/githubicon.png" alt="" /><span id='githubtext'>Github</span></button></a>
+          <a href="../src/assets/SohamKunduResume1.pdf" target='_blank'><button className='icon-buttons'><img id="resid" className="iconpics" src="../src/assets/pics/resumeicon.png" alt="" /><span id='resume-text'>Resume</span></button></a>
           <a href="#contact"><button className='icon-buttons'><img id="contid" className="iconpics" src="../src/assets/pics/contacticon.png" alt="" /><span id='contact-text'>Contact</span></button></a>
           <a href="https://www.linkedin.com/in/sohamkundu27" target='_blank'><button className='icon-buttons'><img id="linkid" className="iconpics" src="../src/assets/pics/linkedinicon.png" alt="" /><span id='linkedin-text'>Linkedin</span></button></a>
           <a href="#portfolio"><button className='icon-buttons'><img id="portid" className="iconpics" src="../src/assets/pics/portfolioicon.png" alt="" /><span id='portfolio-text'>Portfolio</span></button></a>
