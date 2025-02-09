@@ -1,12 +1,12 @@
 import LightingModel from '../core/LightingModel.js';
 import BRDF_Lambert from './BSDF/BRDF_Lambert.js';
 import { diffuseColor } from '../core/PropertyNode.js';
-import { normalGeometry } from '../accessors/NormalNode.js';
-import { tslFn, float, vec2, vec3 } from '../shadernode/ShaderNode.js';
+import { normalGeometry } from '../accessors/Normal.js';
+import { Fn, float, vec2, vec3 } from '../tsl/TSLBase.js';
 import { mix, smoothstep } from '../math/MathNode.js';
 import { materialReference } from '../accessors/MaterialReferenceNode.js';
 
-const getGradientIrradiance = tslFn( ( { normal, lightDirection, builder } ) => {
+const getGradientIrradiance = /*@__PURE__*/ Fn( ( { normal, lightDirection, builder } ) => {
 
 	// dotNL will be from -1.0 to 1.0
 	const dotNL = normal.dot( lightDirection );
@@ -28,8 +28,21 @@ const getGradientIrradiance = tslFn( ( { normal, lightDirection, builder } ) => 
 
 } );
 
+/**
+ * Represents the lighting model for a toon material. Used in {@link MeshToonNodeMaterial}.
+ *
+ * @augments LightingModel
+ */
 class ToonLightingModel extends LightingModel {
 
+	/**
+	 * Implements the direct lighting. Instead of using a conventional smooth irradiance, the irradiance is
+	 * reduced to a small number of discrete shades to create a comic-like, flat look.
+	 *
+	 * @param {Object} input - The input data.
+	 * @param {StackNode} stack - The current stack.
+	 * @param {NodeBuilder} builder - The current node builder.
+	 */
 	direct( { lightDirection, lightColor, reflectedLight }, stack, builder ) {
 
 		const irradiance = getGradientIrradiance( { normal: normalGeometry, lightDirection, builder } ).mul( lightColor );
@@ -38,6 +51,13 @@ class ToonLightingModel extends LightingModel {
 
 	}
 
+	/**
+	 * Implements the indirect lighting.
+	 *
+	 * @param {ContextNode} input - The current node context.
+	 * @param {StackNode} stack - The current stack.
+	 * @param {NodeBuilder} builder - The current node builder.
+	 */
 	indirect( { ambientOcclusion, irradiance, reflectedLight } ) {
 
 		reflectedLight.indirectDiffuse.addAssign( irradiance.mul( BRDF_Lambert( { diffuseColor } ) ) );

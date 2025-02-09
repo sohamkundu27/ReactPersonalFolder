@@ -1,15 +1,37 @@
-import Node, { addNodeClass } from './Node.js';
-import { varying } from './VaryingNode.js';
-import { nodeObject } from '../shadernode/ShaderNode.js';
+import Node from './Node.js';
+import { nodeObject, varying } from '../tsl/TSLBase.js';
 
+/** @module AttributeNode **/
+
+/**
+ * Base class for representing shader attributes as nodes.
+ *
+ * @augments Node
+ */
 class AttributeNode extends Node {
 
-	constructor( attributeName, nodeType = null, defaultNode = null ) {
+	static get type() {
+
+		return 'AttributeNode';
+
+	}
+
+	/**
+	 * Constructs a new attribute node.
+	 *
+	 * @param {String} attributeName - The name of the attribute.
+	 * @param {String?} nodeType - The node type.
+	 */
+	constructor( attributeName, nodeType = null ) {
 
 		super( nodeType );
 
-		this.defaultNode = defaultNode;
-
+		/**
+		 * `AttributeNode` sets this property to `true` by default.
+		 *
+		 * @type {Boolean}
+		 * @default true
+		 */
 		this.global = true;
 
 		this._attributeName = attributeName;
@@ -24,7 +46,7 @@ class AttributeNode extends Node {
 
 	getNodeType( builder ) {
 
-		let nodeType = super.getNodeType( builder );
+		let nodeType = this.nodeType;
 
 		if ( nodeType === null ) {
 
@@ -48,6 +70,14 @@ class AttributeNode extends Node {
 
 	}
 
+	/**
+	 * Sets the attribute name to the given value. The method can be
+	 * overwritten in derived classes if the final name must be computed
+	 * analytically.
+	 *
+	 * @param {String} attributeName - The name of the attribute.
+	 * @return {AttributeNode} A reference to this node.
+	 */
 	setAttributeName( attributeName ) {
 
 		this._attributeName = attributeName;
@@ -56,6 +86,14 @@ class AttributeNode extends Node {
 
 	}
 
+	/**
+	 * Returns the attribute name of this node. The method can be
+	 * overwritten in derived classes if the final name must be computed
+	 * analytically.
+	 *
+	 * @param {NodeBuilder} builder - The current node builder.
+	 * @return {String} The attribute name.
+	 */
 	getAttributeName( /*builder*/ ) {
 
 		return this._attributeName;
@@ -91,17 +129,7 @@ class AttributeNode extends Node {
 
 			console.warn( `AttributeNode: Vertex attribute "${ attributeName }" not found on geometry.` );
 
-			const { defaultNode } = this;
-
-			if ( defaultNode !== null ) {
-
-				return defaultNode.build( builder, nodeType );
-
-			} else {
-
-				return builder.generateConst( nodeType );
-
-			}
+			return builder.generateConst( nodeType );
 
 		}
 
@@ -129,6 +157,12 @@ class AttributeNode extends Node {
 
 export default AttributeNode;
 
-export const attribute = ( name, nodeType, defaultNode ) => nodeObject( new AttributeNode( name, nodeType, nodeObject( defaultNode ) ) );
-
-addNodeClass( 'AttributeNode', AttributeNode );
+/**
+ * TSL function for creating an attribute node.
+ *
+ * @function
+ * @param {String} name - The name of the attribute.
+ * @param {String?} nodeType - The node type.
+ * @returns {AttributeNode}
+ */
+export const attribute = ( name, nodeType ) => nodeObject( new AttributeNode( name, nodeType ) );

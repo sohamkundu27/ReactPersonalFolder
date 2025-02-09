@@ -3,16 +3,33 @@ import { diffuseColor } from '../core/PropertyNode.js';
 import { MultiplyOperation, MixOperation, AddOperation } from '../../constants.js';
 import { materialSpecularStrength, materialReflectivity } from '../accessors/MaterialNode.js';
 import { mix } from '../math/MathNode.js';
-import { vec4 } from '../shadernode/ShaderNode.js';
+import { vec4 } from '../tsl/TSLBase.js';
 
+/**
+ * Represents the lighting model for unlit materials. The only light contribution
+ * is baked indirect lighting modulated with ambient occlusion and the material's
+ * diffuse color. Environment mapping is supported. Used in {@link MeshBasicNodeMaterial}.
+ *
+ * @augments LightingModel
+ */
 class BasicLightingModel extends LightingModel {
 
+	/**
+	 * Constructs a new basic lighting model.
+	 */
 	constructor() {
 
 		super();
 
 	}
 
+	/**
+	 * Implements the baked indirect lighting with its modulation.
+	 *
+	 * @param {ContextNode} context - The current node context.
+	 * @param {StackNode} stack - The current stack.
+	 * @param {NodeBuilder} builder - The current node builder.
+	 */
 	indirect( context, stack, builder ) {
 
 		const ambientOcclusion = context.ambientOcclusion;
@@ -41,6 +58,13 @@ class BasicLightingModel extends LightingModel {
 
 	}
 
+	/**
+	 * Implements the environment mapping.
+	 *
+	 * @param {ContextNode} context - The current node context.
+	 * @param {StackNode} stack - The current stack.
+	 * @param {NodeBuilder} builder - The current node builder.
+	 */
 	finish( context, stack, builder ) {
 
 		const material = builder.material;

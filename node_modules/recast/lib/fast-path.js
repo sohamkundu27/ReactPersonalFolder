@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var assert_1 = tslib_1.__importDefault(require("assert"));
+var tiny_invariant_1 = tslib_1.__importDefault(require("tiny-invariant"));
 var types = tslib_1.__importStar(require("ast-types"));
 var util = tslib_1.__importStar(require("./util"));
 var n = types.namedTypes;
@@ -27,7 +27,7 @@ var PRECEDENCE = {};
     });
 });
 var FastPath = function FastPath(value) {
-    assert_1.default.ok(this instanceof FastPath);
+    (0, tiny_invariant_1.default)(this instanceof FastPath);
     this.stack = [value];
 };
 var FPp = FastPath.prototype;
@@ -285,6 +285,14 @@ FPp.needsParens = function (assumeExpressionContext) {
     }
     if (!parent)
         return false;
+    // Wrap e.g. `-1` in parentheses inside `(-1) ** 2`.
+    if (node.type === "UnaryExpression" &&
+        parent.type === "BinaryExpression" &&
+        name === "left" &&
+        parent.left === node &&
+        parent.operator === "**") {
+        return true;
+    }
     switch (node.type) {
         case "UnaryExpression":
         case "SpreadElement":
@@ -313,7 +321,7 @@ FPp.needsParens = function (assumeExpressionContext) {
                         return true;
                     }
                     if (pp === np && name === "right") {
-                        assert_1.default.strictEqual(parent.right, node);
+                        (0, tiny_invariant_1.default)(parent.right === node);
                         return true;
                     }
                     break;
@@ -481,19 +489,19 @@ FPp.firstInStatement = function () {
         if (n.BlockStatement.check(parent) &&
             parentName === "body" &&
             childName === 0) {
-            assert_1.default.strictEqual(parent.body[0], child);
+            (0, tiny_invariant_1.default)(parent.body[0] === child);
             return true;
         }
         if (n.ExpressionStatement.check(parent) && childName === "expression") {
-            assert_1.default.strictEqual(parent.expression, child);
+            (0, tiny_invariant_1.default)(parent.expression === child);
             return true;
         }
         if (n.AssignmentExpression.check(parent) && childName === "left") {
-            assert_1.default.strictEqual(parent.left, child);
+            (0, tiny_invariant_1.default)(parent.left === child);
             return true;
         }
         if (n.ArrowFunctionExpression.check(parent) && childName === "body") {
-            assert_1.default.strictEqual(parent.body, child);
+            (0, tiny_invariant_1.default)(parent.body === child);
             return true;
         }
         // s[i + 1] and s[i + 2] represent the array between the parent
@@ -501,29 +509,29 @@ FPp.firstInStatement = function () {
         if (n.SequenceExpression.check(parent) &&
             s[i + 1] === "expressions" &&
             childName === 0) {
-            assert_1.default.strictEqual(parent.expressions[0], child);
+            (0, tiny_invariant_1.default)(parent.expressions[0] === child);
             continue;
         }
         if (n.CallExpression.check(parent) && childName === "callee") {
-            assert_1.default.strictEqual(parent.callee, child);
+            (0, tiny_invariant_1.default)(parent.callee === child);
             continue;
         }
         if (n.MemberExpression.check(parent) && childName === "object") {
-            assert_1.default.strictEqual(parent.object, child);
+            (0, tiny_invariant_1.default)(parent.object === child);
             continue;
         }
         if (n.ConditionalExpression.check(parent) && childName === "test") {
-            assert_1.default.strictEqual(parent.test, child);
+            (0, tiny_invariant_1.default)(parent.test === child);
             continue;
         }
         if (isBinary(parent) && childName === "left") {
-            assert_1.default.strictEqual(parent.left, child);
+            (0, tiny_invariant_1.default)(parent.left === child);
             continue;
         }
         if (n.UnaryExpression.check(parent) &&
             !parent.prefix &&
             childName === "argument") {
-            assert_1.default.strictEqual(parent.argument, child);
+            (0, tiny_invariant_1.default)(parent.argument === child);
             continue;
         }
         return false;

@@ -5,9 +5,10 @@ const Factory_1 = require("../Factory");
 const Node_1 = require("../Node");
 const Validators_1 = require("../Validators");
 const Contrast = function (imageData) {
-    var adjust = Math.pow((this.contrast() + 100) / 100, 2);
-    var data = imageData.data, nPixels = data.length, red = 150, green = 150, blue = 150, i;
-    for (i = 0; i < nPixels; i += 4) {
+    const adjust = Math.pow((this.contrast() + 100) / 100, 2);
+    const data = imageData.data, nPixels = data.length;
+    let red = 150, green = 150, blue = 150;
+    for (let i = 0; i < nPixels; i += 4) {
         red = data[i];
         green = data[i + 1];
         blue = data[i + 2];

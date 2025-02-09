@@ -416,6 +416,20 @@ type IOSViewProps = $ReadOnly<{|
   accessibilityViewIsModal?: ?boolean,
 
   /**
+   * @platform ios
+   *
+   * See https://reactnative.dev/docs/view#accessibilityshowslargecontentviewer
+   */
+  accessibilityShowsLargeContentViewer?: ?boolean,
+
+  /**
+   * @platform ios
+   *
+   * See https://reactnative.dev/docs/view#accessibilitylargecontenttitle
+   */
+  accessibilityLargeContentTitle?: ?string,
+
+  /**
    * The aria-modal attribute indicates content contained within a modal with aria-modal="true"
    * should be accessible to the user.
    * Default is `false`.
@@ -552,9 +566,6 @@ export type ViewProps = $ReadOnly<{|
    * anything may be automatically removed from the native hierarchy as an
    * optimization. Set this property to `false` to disable this optimization and
    * ensure that this `View` exists in the native view hierarchy.
-   *
-   * @platform android
-   * In Fabric, this prop is used in ios as well.
    *
    * See https://reactnative.dev/docs/view#collapsable
    */

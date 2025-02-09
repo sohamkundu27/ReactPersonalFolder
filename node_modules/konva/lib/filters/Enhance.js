@@ -5,24 +5,25 @@ const Factory_1 = require("../Factory");
 const Node_1 = require("../Node");
 const Validators_1 = require("../Validators");
 function remap(fromValue, fromMin, fromMax, toMin, toMax) {
-    var fromRange = fromMax - fromMin, toRange = toMax - toMin, toValue;
+    const fromRange = fromMax - fromMin, toRange = toMax - toMin;
     if (fromRange === 0) {
         return toMin + toRange / 2;
     }
     if (toRange === 0) {
         return toMin;
     }
-    toValue = (fromValue - fromMin) / fromRange;
+    let toValue = (fromValue - fromMin) / fromRange;
     toValue = toRange * toValue + toMin;
     return toValue;
 }
 const Enhance = function (imageData) {
-    var data = imageData.data, nSubPixels = data.length, rMin = data[0], rMax = rMin, r, gMin = data[1], gMax = gMin, g, bMin = data[2], bMax = bMin, b, i;
-    var enhanceAmount = this.enhance();
+    const data = imageData.data, nSubPixels = data.length;
+    let rMin = data[0], rMax = rMin, r, gMin = data[1], gMax = gMin, g, bMin = data[2], bMax = bMin, b;
+    const enhanceAmount = this.enhance();
     if (enhanceAmount === 0) {
         return;
     }
-    for (i = 0; i < nSubPixels; i += 4) {
+    for (let i = 0; i < nSubPixels; i += 4) {
         r = data[i + 0];
         if (r < rMin) {
             rMin = r;
@@ -57,7 +58,7 @@ const Enhance = function (imageData) {
         bMax = 255;
         bMin = 0;
     }
-    var rMid, rGoalMax, rGoalMin, gMid, gGoalMax, gGoalMin, bMid, bGoalMax, bGoalMin;
+    let rMid, rGoalMax, rGoalMin, gMid, gGoalMax, gGoalMin, bMid, bGoalMax, bGoalMin;
     if (enhanceAmount > 0) {
         rGoalMax = rMax + enhanceAmount * (255 - rMax);
         rGoalMin = rMin - enhanceAmount * (rMin - 0);
@@ -77,7 +78,7 @@ const Enhance = function (imageData) {
         bGoalMax = bMax + enhanceAmount * (bMax - bMid);
         bGoalMin = bMin + enhanceAmount * (bMin - bMid);
     }
-    for (i = 0; i < nSubPixels; i += 4) {
+    for (let i = 0; i < nSubPixels; i += 4) {
         data[i + 0] = remap(data[i + 0], rMin, rMax, rGoalMin, rGoalMax);
         data[i + 1] = remap(data[i + 1], gMin, gMax, gGoalMin, gGoalMax);
         data[i + 2] = remap(data[i + 2], bMin, bMax, bGoalMin, bGoalMax);
