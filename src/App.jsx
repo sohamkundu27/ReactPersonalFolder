@@ -16,6 +16,7 @@ function App() {
       <Brand/>
       <Head/>
       <AboutMe/>
+      <AboutMe/>
       <Experience/>
       <Skills/>
       <Portfolio/>
